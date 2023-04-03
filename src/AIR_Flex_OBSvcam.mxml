@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:mx="library://ns.adobe.com/flex/mx" 
+		applicationComplete="applicationComplete(event)"
+		width="640" height="480">
+
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+
+	<fx:Script>
+		<![CDATA[
+			
+			import flash.events.Event;
+			import mx.core.UIComponent;
+			import flash.media.Video;
+			import flash.media.Camera;
+
+			private var __camSpot_UIC:UIComponent;
+			private var __camSpot_V:Video;
+			private var __camera:Camera;
+
+			public function applicationComplete(event:Event):void
+			{
+				trace("Application complete!");
+
+				// create UIComponent
+				__camSpot_UIC = new UIComponent();
+				__camSpot_UIC.left = 0;
+				__camSpot_UIC.right = 0;
+				__camSpot_UIC.top = 0;
+				__camSpot_UIC.bottom = 0;
+
+				// add the UIComponent to the stage
+				this.addElement(__camSpot_UIC);
+
+				// create the Video
+				__camSpot_V = new Video(this.width, this.height);
+				
+				// add the Video to the UIComponent
+				__camSpot_UIC.addChild(__camSpot_V);
+				
+				// set the Camera to the OBS Virtual Camera (broken?)
+				__camera = Camera.getCamera(Camera.names.indexOf("OBS Virtual Camera") as String);
+				// set Camera resolution/quality
+				__camera.setMode(640,480,30,true);
+				__camera.setQuality(65536,90);
+				// attach the Camera to the Video
+				__camSpot_V.attachCamera(__camera);
+
+				trace("Camera.names:  "+Camera.names)
+				trace("OBS Virtual Camera is at index "+Camera.names.indexOf("OBS Virtual Camera"));
+				trace("Attached "+__camera.name+" at index "+Camera.names.indexOf(__camera.name));
+			}
+
+		]]>
+	</fx:Script>
+
+
+</s:WindowedApplication>

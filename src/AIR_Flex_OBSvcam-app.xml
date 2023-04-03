@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<application xmlns="http://ns.adobe.com/air/application/50.0"> 
+	<id>com.example.AIRFlexOBSvcam</id> 
+	<versionNumber>0.0.1</versionNumber> 
+	<filename>AIR_Flex_OBSvcam</filename> 
+	<name>AIR_Flex_OBSvcam</name> 
+	<initialWindow>
+		<content>bin/AIR_Flex_OBSvcam.air</content> 
+		<visible>true</visible>
+	</initialWindow>
+</application>

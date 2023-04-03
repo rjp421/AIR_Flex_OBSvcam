@@ -1,0 +1,11 @@
+{
+	"config": "air",
+	"compilerOptions": {
+		"source-path": [
+			"src"
+		],
+		"output": "bin/AIR_Flex_OBSvcam.air"
+	},
+	"mainClass": "AIR_Flex_OBSvcam",
+	"application": "src/AIR_Flex_OBSvcam-app.xml"
+}
