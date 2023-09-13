@@ -42,7 +42,7 @@
 				__camSpot_UIC.addChild(__camSpot_V);
 				
 				// set the Camera to the OBS Virtual Camera (broken?)
-				__camera = Camera.getCamera(Camera.names.indexOf("OBS Virtual Camera") as String);
+				__camera = Camera.getCamera(String(Camera.names.indexOf("OBS Virtual Camera")));
 				// set Camera resolution/quality
 				__camera.setMode(640,480,30,true);
 				__camera.setQuality(65536,90);
